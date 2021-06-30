@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PG_DATA="/home/devops/PG_test/PG"
+PG_DATA="/etc/postgresql/12/main"
 ip=$1
 touch $PG_DATA/postgresql.conf
 
@@ -17,3 +17,4 @@ touch $PG_DATA/pg_hba.conf
 echo "# TYPE   DATABASE         USER            ADDRESS            METHOD" >> $PG_DATA/pg_hba.conf
 echo "host    replication     replication         $1                 md5" >> $PG_DATA/pg_hba.conf
 
+systemctl restart postgresql
