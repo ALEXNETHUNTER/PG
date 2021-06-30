@@ -5,7 +5,7 @@ U=`whoami`
 ip=$1
 #touch $PG_DATA/postgresql.conf
 
-echo "listen_addresses = '$ip'" >> $PG_DATA/postgresql.conf
+echo "listen_addresses = $ip" >> $PG_DATA/postgresql.conf
 echo "max_prepared_transactions = 100" >> $PG_DATA/postgresql.conf
 echo "max_wal_senders = 3" >> $PG_DATA/postgresql.conf
 echo "wal_level = logical" >> $PG_DATA/postgresql.conf
